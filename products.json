@@ -1,0 +1,8 @@
+{
+    "ProductID": 1,
+    "Name": "Laptop",
+    "Specifications": {
+        "RAM": "16GB",
+        "Storage": "512GB SSD"
+    }
+}

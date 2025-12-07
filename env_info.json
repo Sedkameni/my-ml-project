@@ -1,0 +1,10 @@
+{
+  "python_version": "3.13.3",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "timestamp": "2025-10-23T09:37:17.763732Z",
+  "numpy": "2.3.2",
+  "pandas": "2.3.2",
+  "scikit_learn": "1.7.2",
+  "seaborn": "0.13.2",
+  "matplotlib": "3.10.7"
+}

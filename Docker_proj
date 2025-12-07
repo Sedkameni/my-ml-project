@@ -1,0 +1,33 @@
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY RequirementsProj_FPA.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r RequirementsProj_FPA.txt
+
+# Copy application files
+COPY app.py .
+COPY models/ models/
+
+# Expose port
+EXPOSE 5000
+
+# Set environment variables
+ENV MODEL_VERSION=1.0
+ENV FLASK_APP=app.py
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD python -c "import requests; requests.get('http://localhost:5000/health')"
+
+# Run the application
+CMD ["python", "app.py"]
