@@ -9,10 +9,10 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Copy requirements to leverage docker cache
-COPY requirements.txt .
+COPY RequirementsProj_FPA.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r RequirementsProj_FPA.txt
 
 # Copy the rest of the application
 COPY . .
@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 5000
 
 # Run the Flask app
-CMD ["python", "app.py"]
+CMD ["python", "appproj_fpa.py"]
