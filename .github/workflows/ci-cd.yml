@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE: sedkameni/sentiment-api  # CHANGE to YOUR Docker Hub username
+  DOCKER_IMAGE: sedkamen/sentiment-api  # CHANGE to YOUR Docker Hub username
 
 jobs:
   test:
